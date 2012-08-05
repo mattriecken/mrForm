@@ -2,21 +2,21 @@
 <html lang="en">
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script src="js/form.jQuery.js"></script>
-		<script src="js/script.js"></script>
+		<script src="js/mrForm.jQuery.js"></script>
+		<script src="js/mrForm.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/mrForm.css" />
 	</head>
 	<body>
 		
 		<form id="mrForm">
 			<div>
-			<input type="text" value="First name" class="mrForm_textElement" id="mrForm_firstName" statusMessage="Please enter a valid first name." />
+			<input type="text" value="First name" class="mrForm_textElement" maxlength="20" id="mrForm_firstName" statusMessage="Please enter a valid first name." />
 			</div>
 			<div>
-			<input type="text" value="Last name" class="mrForm_textElement" id="mrForm_lastName" statusMessage="Please enter a last name" />
+			<input type="text" value="Last name" class="mrForm_textElement" maxlength="20" id="mrForm_lastName" statusMessage="Please enter a last name" />
 			</div>
 			<div>
-			<input type="text" value="E-mail" class="mrForm_textElement" id="mrForm_email" statusMessage="Please E-mail again" />
+			<input type="text" value="E-mail" class="mrForm_textElement" maxlength="75" id="mrForm_email" statusMessage="Please E-mail again" />
 			</div>
 			<div id="mrForm_emailStatusMessage" class="mrForm_statusMessage"></div>
 			<div>

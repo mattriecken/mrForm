@@ -9,7 +9,6 @@
 
 		$(this).find(':input').focus(function() {
 			
-			
 			// First name
 			if ($(this).attr('id') == 'mrForm_firstName')
 			{
@@ -19,6 +18,21 @@
 				// On blur, if the value is blank, reset the value to defaultFirstName
 				$(this).blur(function() {
 					if ($(this).val() == '') $(this).val(defaultFirstName);
+				});	
+				
+				$(this).keyup(function(){
+
+					var currentValue = $(this).val();
+
+					// Check for valid element input and set status message
+					if (currentValue.match(/^[A-Za-z-]+$/))
+					{
+						$(this).css('background', 'url(images/check_green.jpg) no-repeat scroll');
+						$(this).css('background-position', 'right');
+					} else {
+						$(this).css('background', 'url(images/check_gray.jpg) no-repeat scroll');
+						$(this).css('background-position', 'right');
+					}
 				});
 			}
 			
@@ -31,6 +45,21 @@
 				// On blur, if the value is blank, reset the value to defaultLastName
 				$(this).blur(function() {
 					if ($(this).val() == '') $(this).val(defaultLastName);
+				});
+				
+				$(this).keyup(function(){
+					
+					var currentValue = $(this).val();
+				
+					// Check for valid element input and set status message
+					if (currentValue.match(/^[A-Za-z-]+$/))
+					{
+						$(this).css('background', 'url(images/check_green.jpg) no-repeat scroll');
+						$(this).css('background-position', 'right');
+					} else {
+						$(this).css('background', 'url(images/check_gray.jpg) no-repeat scroll');
+						$(this).css('background-position', 'right');
+					}
 				});
 			}
 			
@@ -52,14 +81,22 @@
 					// Check for valid element input and set status message
 					if (currentValue.match(/^[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$/))
 					{
-						$(this).attr('statusMessage', 'Valid E-mail');
+						$(this).css('background', 'url(images/check_green.jpg) no-repeat scroll');
+						$(this).css('background-position', 'right');
 					} else {
-						$(this).attr('statusMessage', 'Invalid E-mail');
+						$(this).css('background', 'url(images/check_gray.jpg) no-repeat scroll');
+						$(this).css('background-position', 'right');
 					}
 					
-					// Update the status message
-					$('#mrForm_emailStatusMessage').html($(this).attr('statusMessage'));
-
+					// Validate against #mrForm_confirmEmail if user filled that element in first
+					if (currentValue == $('#mrForm_confirmEmail').val())
+					{
+						$('#mrForm_confirmEmail').css('background', 'url(images/check_green.jpg) no-repeat scroll');
+						$('#mrForm_confirmEmail').css('background-position', 'right');
+					} else {
+						$('#mrForm_confirmEmail').css('background', 'url(images/check_gray.jpg) no-repeat scroll');
+						$('#mrForm_confirmEmail').css('background-position', 'right');
+					}
 				});
 			}
 			
@@ -80,20 +117,14 @@
 					
 					if (currentValue == $('#mrForm_email').val())
 					{
-						$(this).attr('statusMessage', 'E-mails match!');
+						$(this).css('background', 'url(images/check_green.jpg) no-repeat scroll');
+						$(this).css('background-position', 'right');
 					} else {
-						$(this).attr('statusMessage', 'E-mails do not match');
+						$(this).css('background', 'url(images/check_gray.jpg) no-repeat scroll');
+						$(this).css('background-position', 'right');
 					}
-					
-					// Update the status message
-					$('#mrForm_confirmEmailStatusMessage').html($(this).attr('statusMessage'));
-					
 				});
 			}
-			
-
 		});
-		
 	};
-	
 })( jQuery );
