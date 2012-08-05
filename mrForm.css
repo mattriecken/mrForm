@@ -1,0 +1,10 @@
+.mrForm_textElement {
+	margin: 0px;
+	padding: 7px;
+	border: 1px solid black;
+	outline: none;
+}
+
+.mrForm_textElement:focus {
+	background-color: #ccc;
+}

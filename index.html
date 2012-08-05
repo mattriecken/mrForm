@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="form.jQuery.js"></script>
+		<script src="script.js"></script>
+		<link rel="stylesheet" type="text/css" href="mrForm.css" />
+	</head>
+	<body>
+		
+		<form id="mrForm">
+			<div>
+			<input type="text" value="First name" class="mrForm_textElement" id="mrForm_firstName" statusMessage="Please enter a valid first name." />
+			</div>
+			<div>
+			<input type="text" value="Last name" class="mrForm_textElement" id="mrForm_lastName" statusMessage="Please enter a last name" />
+			</div>
+			<div>
+			<input type="text" value="E-mail" class="mrForm_textElement" id="mrForm_email" statusMessage="Please E-mail again" />
+			</div>
+			<div id="mrForm_emailStatusMessage" class="mrForm_statusMessage"></div>
+			<div>
+			<input type="text" value="Confirm E-mail" class="mrForm_textElement" id="mrForm_confirmEmail" statusMessage="E-mails do not match" />
+			</div>
+			<div id="mrForm_confirmEmailStatusMessage" class="mrForm_statusMessage"></div>
+		</form>	
+	</body>
+</html>
